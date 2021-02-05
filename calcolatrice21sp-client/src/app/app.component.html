@@ -2,23 +2,29 @@
 +
 <input type="number" [(ngModel)]="op2s">
 <button (click)="somma()">=</button>
+{{risultatoSomma}}
 <hr>
 <input type="number" [(ngModel)]="op1d">
 -
 <input type="number" [(ngModel)]="op2d">
 <button (click)="sottrai()">=</button>
+{{risultatoDifferenza}}
 <hr>
 <input type="number" [(ngModel)]="op1m">
 *
 <input type="number" [(ngModel)]="op2m">
 <button (click)="moltiplica()">=</button>
-<hr><input type="number" [(ngModel)]="op1q">
+{{risultatoProdotto}}
+<hr>
+<input type="number" [(ngModel)]="op1q">
 /
 <input type="number" [(ngModel)]="op2q">
 <button (click)="dividi()">=</button>
+{{risultatoDivisione}}
 <hr>
 <input type="number" [(ngModel)]="op1p">
 %
 <input type="number" [(ngModel)]="op2p">
 <button (click)="modulo()">=</button>
+{{risultatoModulo}}
 <hr>
