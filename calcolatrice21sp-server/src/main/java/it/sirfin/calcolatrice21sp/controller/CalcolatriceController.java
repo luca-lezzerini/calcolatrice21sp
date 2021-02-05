@@ -19,9 +19,11 @@ public class CalcolatriceController {
     @RequestMapping("/somma")
     @ResponseBody
     public CalcolatriceResDto somma(@RequestBody CalcolatriceReqDto dto) {
+        System.out.println("Ricevuto DTO = " + dto);
         double r = dto.getOp1() + dto.getOp2();
         CalcolatriceResDto risp = new CalcolatriceResDto();
         risp.setRisultato(r);
+        System.out.println("Restituisco DTO = " + risp);
         return risp;
     }
 

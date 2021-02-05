@@ -15,4 +15,11 @@ public class CalcolatriceResDto {
         this.risultato = risultato;
     }
 
+    @Override
+    public String toString() {
+        return "CalcolatriceResDto{" + "risultato=" + risultato + '}';
+    }
+    
+    
+
 }

@@ -24,4 +24,9 @@ public class CalcolatriceReqDto {
         this.op2 = op2;
     }
 
+    @Override
+    public String toString() {
+        return "CalcolatriceReqDto{" + "op1=" + op1 + ", op2=" + op2 + '}';
+    }
+
 }
