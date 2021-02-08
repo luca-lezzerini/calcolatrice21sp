@@ -71,7 +71,17 @@ public class CalcolatriceController {
     @ResponseBody
     public CalcolatriceResDto modulo(@RequestBody CalcolatriceReqDto dto) {
         // invoca il servizio usando la classe iniettata sopra
-        double r = dto.getOp1() % dto.getOp2();
+        double r = calcolatriceService.modulo(dto.getOp1(), dto.getOp2());
+        CalcolatriceResDto risp = new CalcolatriceResDto();
+        risp.setRisultato(r);
+        return risp;
+    }
+
+    @RequestMapping("/casuale")
+    @ResponseBody
+    public CalcolatriceResDto casuale(@RequestBody CalcolatriceReqDto dto) {
+        // invoca il servizio usando la classe iniettata sopra
+        double r = calcolatriceService.casuale(dto.getOp1(), dto.getOp2());
         CalcolatriceResDto risp = new CalcolatriceResDto();
         risp.setRisultato(r);
         return risp;

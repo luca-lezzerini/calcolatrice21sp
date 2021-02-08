@@ -20,11 +20,14 @@ export class AppComponent {
   op2q: number;
   op1p: number;
   op2p: number;
+  op1r: number;
+  op2r: number;
   risultatoSomma: number;
   risultatoDifferenza: number;
   risultatoProdotto: number;
   risultatoDivisione: number;
   risultatoModulo: number;
+  risultatoCasuale: number;
 
   constructor(private http: HttpClient) { }
 
@@ -81,6 +84,17 @@ export class AppComponent {
       .post<CalcolatriceResDto>("http://localhost:8080/modulo",
         dto);
     ox.subscribe(r => this.risultatoModulo = r.risultato);
+  }
+
+  casuale() {
+    let dto = new CalcolatriceReqDto();
+    dto.op1 = this.op1r;
+    dto.op2 = this.op2r;
+
+    let ox: Observable<CalcolatriceResDto> = this.http
+      .post<CalcolatriceResDto>("http://localhost:8080/casuale",
+        dto);
+    ox.subscribe(r => this.risultatoCasuale = r.risultato);
   }
 
 

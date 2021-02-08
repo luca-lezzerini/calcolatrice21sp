@@ -4,10 +4,11 @@ import it.sirfin.calcolatrice21sp.service.CalcolatriceService;
 import org.springframework.stereotype.Service;
 
 /**
- * Implementa l'interfaccia del servizio e, essendo annotata come @Service
- * viene iniettata, come Singleton, dove è presente @Autowired.
- * N.B.: possiamo iniettare con @Autowired anche la classe direttamente
- * ma questo vanifica l'Inversione del Controllo
+ * Implementa l'interfaccia del servizio e, essendo annotata come @Service viene
+ * iniettata, come Singleton, dove è presente @Autowired. N.B.: possiamo
+ * iniettare con @Autowired anche la classe direttamente ma questo vanifica
+ * l'Inversione del Controllo
+ *
  * @author Luca Lezzerini
  */
 @Service
@@ -36,6 +37,11 @@ public class CalcolatriceServiceImpl implements CalcolatriceService {
     @Override
     public double modulo(double a, double b) {
         return a % b;
+    }
+
+    @Override
+    public double casuale(double a, double b) {
+        return (int) (Math.random() * (b - a)) + a;
     }
 
 }
