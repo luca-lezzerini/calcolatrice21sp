@@ -9,6 +9,5 @@ public class Calcolatrice21spApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(Calcolatrice21spApplication.class, args);
 	}
-        //commento
 
 }

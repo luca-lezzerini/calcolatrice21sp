@@ -2,7 +2,7 @@ package it.sirfin.calcolatrice21sp.service;
 
 /**
  * Definisce l'interfaccia della dipendenza da iniettare
- * 
+ *
  */
 public interface CalcolatriceService {
 
@@ -15,8 +15,6 @@ public interface CalcolatriceService {
     double dividi(double a, double b);
 
     double modulo(double a, double b);
-   
-    double casuale (double a, double b);
-    
-    //double cas
+
+    double casuale(double a, double b);
 }
