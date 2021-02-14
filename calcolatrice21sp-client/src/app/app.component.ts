@@ -28,7 +28,7 @@ export class AppComponent {
   risultatoDivisione: number;
   risultatoModulo: number;
   risultatoCasuale: number;
-
+  
   constructor(private http: HttpClient) { }
 
   somma() {
@@ -85,18 +85,15 @@ export class AppComponent {
         dto);
     ox.subscribe(r => this.risultatoModulo = r.risultato);
   }
-
-  casuale() {
+  casuale (){
     let dto = new CalcolatriceReqDto();
     dto.op1 = this.op1r;
     dto.op2 = this.op2r;
-
     let ox: Observable<CalcolatriceResDto> = this.http
-      .post<CalcolatriceResDto>("http://localhost:8080/casuale",
-        dto);
-    ox.subscribe(r => this.risultatoCasuale = r.risultato);
+    .post<CalcolatriceResDto>("http://localhost:8080/casuale",
+      dto);
+  ox.subscribe(r => this.risultatoCasuale = r.risultato);
   }
-
 
 
 }

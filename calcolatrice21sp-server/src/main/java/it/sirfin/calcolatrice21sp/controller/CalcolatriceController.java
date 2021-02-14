@@ -3,6 +3,7 @@ package it.sirfin.calcolatrice21sp.controller;
 import it.sirfin.calcolatrice21sp.dto.CalcolatriceReqDto;
 import it.sirfin.calcolatrice21sp.dto.CalcolatriceResDto;
 import it.sirfin.calcolatrice21sp.service.CalcolatriceService;
+import java.util.HashSet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -17,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("*")
 @RestController
 public class CalcolatriceController {
-
+//Cioa
+    //Commento
     // Inietta l'implementazione configurata (altrove) dell'interfaccia
     // CalcolatriceService (ossia la classe che la implementa è che è annotata @Service)
     // l'istanza iniettata è gestita come Singleton
@@ -71,7 +73,7 @@ public class CalcolatriceController {
     @ResponseBody
     public CalcolatriceResDto modulo(@RequestBody CalcolatriceReqDto dto) {
         // invoca il servizio usando la classe iniettata sopra
-        double r = calcolatriceService.modulo(dto.getOp1(), dto.getOp2());
+        double r = dto.getOp1() % dto.getOp2();
         CalcolatriceResDto risp = new CalcolatriceResDto();
         risp.setRisultato(r);
         return risp;
@@ -81,10 +83,9 @@ public class CalcolatriceController {
     @ResponseBody
     public CalcolatriceResDto casuale(@RequestBody CalcolatriceReqDto dto) {
         // invoca il servizio usando la classe iniettata sopra
-        double r = calcolatriceService.casuale(dto.getOp1(), dto.getOp2());
-        CalcolatriceResDto risp = new CalcolatriceResDto();
-        risp.setRisultato(r);
-        return risp;
+        double r =calcolatriceService.casuale(dto.getOp1(), dto.getOp2());
+        CalcolatriceResDto rips = new CalcolatriceResDto();
+        rips.setRisultato(r);
+        return rips;
     }
-
 }
